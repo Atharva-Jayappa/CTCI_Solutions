@@ -25,23 +25,23 @@ class SLL:
         new_node.next = self.head
         self.head = new_node
 
-    def delete_node(self, key):
-        """Delete the first occurrence of a node with the given key."""
+    def delete_node(self, node):
+        """Delete the given node from the linked list."""
         temp = self.head
 
-        # If the head node itself holds the key
-        if temp and temp.data == key:
+        # If the head node itself is the node to be deleted
+        if temp == node:
             self.head = temp.next
             temp = None
             return
 
-        # Search for the key to be deleted
+        # Search for the node to be deleted
         prev = None
-        while temp and temp.data != key:
+        while temp and temp != node:
             prev = temp
             temp = temp.next
 
-        # If the key was not present in the list
+        # If the node was not present in the list
         if not temp:
             return
 
