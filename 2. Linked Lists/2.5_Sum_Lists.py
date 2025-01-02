@@ -1,6 +1,33 @@
 from sll import SLL
 
 
+def add_straight(sll1, sll2) -> SLL:
+    sll3 = SLL()
+    p1 = sll1.head
+    p2 = sll2.head
+    i1 = i2 = ""
+
+    while p1:
+        i1 += str(p1.data)
+        p1 = p1.next
+
+    while p2:
+        i2 += str(p2.data)
+        p2 = p2.next
+
+    i1 = int(i1)
+    i2 = int(i2)
+
+    out = str(i1+i2)
+
+    for i in out:
+        sll3.insert_end(i)
+
+    return sll3
+
+
+
+
 def add(sll1, sll2) -> SLL:
     sll3 = SLL()
     p1 = sll1.head
@@ -42,6 +69,6 @@ if __name__ == "__main__":
 
     print(sll2.display())
 
-    sum_lists = add(sll1, sll2)
+    sum_lists = add_straight(sll1, sll2)
 
     print(sum_lists.display())
